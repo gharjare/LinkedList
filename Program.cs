@@ -11,6 +11,8 @@
             linkedList.Display();
             linkedList.Add(70);
             linkedList.Display();
+            linkedList.AddingAtParticularPosition(2, 30);
+            linkedList.Display();
         }
     }
 }
