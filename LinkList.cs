@@ -9,10 +9,10 @@ namespace LinkedList
     public class LinkList<T>
     {
         public Node<T> head;
-        //Add Method For Add Value to Node
+        
         public void Add(T data)
         {
-            //Creating object of node
+            
             Node<T> node = new Node<T>(data);
             if (this.head == null)
             {
@@ -28,7 +28,19 @@ namespace LinkedList
                 temp.next = node;
             }
         }
-        //Display Method For Displaying The node
+        public void Append(T data)
+        {
+            Node<T> node = new Node<T>(data);
+            if (this.head == null)
+                this.head = node;
+            else
+            {
+                node.next = head;
+                this.head = node;
+            }
+            Console.WriteLine("{0} inserted into the linked list", node.data);
+        }
+        
         public void Display()
         {
             Node<T> temp = this.head;
