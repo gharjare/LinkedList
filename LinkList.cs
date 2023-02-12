@@ -9,10 +9,10 @@ namespace LinkedList
     public class LinkList<T>
     {
         public Node<T> head;
-        
+        //Add Method For Add Value to Node
         public void Add(T data)
         {
-            
+            //Creating object of node
             Node<T> node = new Node<T>(data);
             if (this.head == null)
             {
@@ -40,7 +40,7 @@ namespace LinkedList
             }
             Console.WriteLine("{0} inserted into the linked list", node.data);
         }
-        
+        //Display Method For Displaying value of The node
         public void Display()
         {
             Node<T> temp = this.head;
@@ -55,6 +55,7 @@ namespace LinkedList
                 temp = temp.next;
             }
         }
+        //Method For Adding value of The node at a particular position
         public void AddingAtParticularPosition(int position, T data)
         {
             if (position < 1)
@@ -86,6 +87,7 @@ namespace LinkedList
             }
             Console.WriteLine("the Inserted Value is " + data);
         }
+        //Method For Removing The first node
         public Node<T> RemoveFirstNode()
         {
             if (this.head == null)
@@ -96,6 +98,26 @@ namespace LinkedList
             this.head = this.head.next;
             Console.WriteLine("Removed the First Value");
             return this.head;
+        }
+        //Method For Removing The Last node
+        public Node<T> RemoveLastNode()
+        {
+            if (this.head == null)
+            {
+                return null;
+            }
+            if (head.next == null)
+            {
+                return null;
+            }
+            Node<T> NewNode = head;
+            while (NewNode.next.next != null)
+            {
+                NewNode = NewNode.next;
+            }
+            NewNode.next = null;
+            Console.WriteLine("Removed the Last Value");
+            return head;
         }
     }
 }
