@@ -13,6 +13,8 @@
             linkedList.Display();
             linkedList.AddingAtParticularPosition(2, 30);
             linkedList.Display();
+            linkedList.RemoveFirstNode();
+            linkedList.Display();
         }
     }
 }

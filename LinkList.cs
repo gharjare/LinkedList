@@ -86,5 +86,16 @@ namespace LinkedList
             }
             Console.WriteLine("the Inserted Value is " + data);
         }
+        public Node<T> RemoveFirstNode()
+        {
+            if (this.head == null)
+            {
+                return null;
+            }
+            Node<T> firstElement = this.head;
+            this.head = this.head.next;
+            Console.WriteLine("Removed the First Value");
+            return this.head;
+        }
     }
 }
